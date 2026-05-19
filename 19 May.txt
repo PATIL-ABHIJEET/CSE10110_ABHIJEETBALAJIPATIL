@@ -18,3 +18,5 @@ where salary not between 110000 and 300000;
 SELECT * FROM worker
 WHERE salary BETWEEN 100000 AND 500000
 AND department NOT IN ('hr','admin');
+
+SELECT * FROM worker WHERE first_name LIKE '_i__a_';
