@@ -1,40 +1,64 @@
-use vitcampus;
-CREATE TABLE Persons (
-    ID int NOT NULL,
-    LastName varchar(255) unique not null,
-    FirstName varchar(255) NOT NULL,
-    Age int
-);
-desc persons;
+create table persons(
+id int unique Not null,
+lastname varchar(255) not null,
+firstname varchar(255) not null,
+age int
+)
 
-insert into persons values (101,'V','Jayanth',null);
+ 
+ALTER TABLE persons
+ADD UNIQUE (age);
+
+ALTER TABLE persons
+MODIFY age INT NOT NULL;	
+
+insert into persons values(102,"gaurav","kakkar",10);
+
+UPDATE persons
+SET age = 0
+WHERE age IS NULL;
+
 select * from persons;
 
-ALTER TABLE Persons
-ADD UNIQUE (AGE);
-
-ALTER TABLE Persons
-DROP CONSTRAINT Age;
-
 drop table persons;
-CREATE TABLE Persons (
-  
-    Age int not null,
-    CHECK (Age>=18 and age <=23)
+create table persons(
+id int unique not null,
+lastname varchar(255) not null,
+firstname varchar(255) not null,
+age int not null Check (age>=18 and age<=23)
+)
+
+insert inrto persons values(1,"gaurav","kakkar",20);
+
+create table persons(
+id int unique not null,
+lastname varchar(255) not null,
+firstname varchar(255) not null,
+age int not null Check (age>=18 and age<=23),
+city varchar(255) Default 'Ludhiana'
+)
+INSERT INTO persons (id, lastname, firstname, age)
+VALUES (1, "gaurav", "kakkar", 20);
+
+select * from persons;
+
+create table products(
+pid int primary key,
+pname varchar(100) not null,
+prefno int not null unique
 );
 
-insert into persons values (21);
+insert into products values (101,"electronics", 199);
 
+select * from products;
 
-CREATE TABLE Persons1 (
-    ID int NOT NULL,
-    LastName varchar(255) NOT NULL,
-    FirstName varchar(255),
-    Age int,
-    City varchar(255) DEFAULT 'Coimbatore'
-);
+alter table persons 
+add primary key (id);
+desc persons;
 
-desc persons1;
+alter table persons 
+drop primary key;
+
 
 create table products(
 pid int primary key,
@@ -73,6 +97,7 @@ desc products;
 delete from category where cid=101;
 update 
 
-insert into products values (504,'Power Bank Samsung',64-bit encry key);
+INSERT INTO products
+VALUES (504, 'Power Bank Samsung', 101);
 
 select * from products;
