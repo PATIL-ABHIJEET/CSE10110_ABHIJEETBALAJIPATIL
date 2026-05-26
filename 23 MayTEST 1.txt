@@ -1,8 +1,5 @@
 1. [JOINS] List the name of each employee along with their job title and department name.
-SELECT name, job_title, dept_name
-FROM Employees, Jobs, Departments
-WHERE Employees.job_id = Jobs.job_id
-AND Employees.dept_id = Departments.dept_id;
+SELECT name, job_title, dept_name FROM Employees, Jobs, Departments WHERE Employees.job_id = Jobs.job_idAND Employees.dept_id = Departments.dept_id;
 
 2. [SUBQUERY] Find all employees whose salary is higher than the average salary of the 'IT' department.
 SELECT * FROM Employees
